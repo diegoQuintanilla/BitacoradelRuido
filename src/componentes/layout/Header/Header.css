@@ -1,0 +1,262 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(220, 38, 38, 0.8);
+}
+
+.header-container {
+  max-width: 1400px;
+
+  margin: auto;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 18px 40px;
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 108px;
+  height: 58px;
+
+  object-fit: contain;
+
+  animation: floatLogo 4s ease-in-out infinite;
+  transition: 0.35s;
+}
+
+.logo:hover .logo-img {
+  transform: rotate(-6deg) scale(1.08);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+.logo-text span {
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  color: white;
+
+  letter-spacing: 1px;
+}
+
+.logo-text small {
+  color: #e63946;
+
+  font-size: 0.85rem;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+/* Animación */
+
+@keyframes floatLogo {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 900px) {
+  .logo-text {
+    display: none;
+  }
+
+  .logo-img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #ef4444;
+}
+
+.nav-icon {
+  transition: 0.3s;
+}
+
+.nav-link:hover .nav-icon {
+  color: #ef4444;
+
+  transform: scale(1.2) rotate(-12deg);
+}
+
+.nav-line {
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+  width: 0;
+  height: 2px;
+  background: #dc2626;
+  transition: 0.3s;
+}
+
+.nav-link:hover .nav-line {
+  width: 100%;
+}
+
+.header-buttons {
+  width: 280px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.contact-btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 50px;
+  background: #b91c1c;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(220, 38, 38, 0.35);
+}
+
+.contact-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(220, 38, 38, 0.55);
+}
+
+/* ==========================
+   Menú Hamburguesa
+========================== */
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.mobile-btn {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-buttons {
+    display: none;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100vw;
+    height: 100vh;
+
+    background: #09090b;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transition: 0.35s ease;
+
+    border-left: 1px solid #222;
+
+    z-index: 1000;
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+  }
+
+  .mobile-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 3rem auto 0;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  z-index: 999;
+}

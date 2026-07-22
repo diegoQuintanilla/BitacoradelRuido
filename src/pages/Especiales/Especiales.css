@@ -1,0 +1,233 @@
+.page-entrevistas {
+  background: #0f0f0f;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero-entrevistas {
+  height: 70vh;
+  background: url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1600&q=80")
+    center/cover no-repeat;
+  position: relative;
+}
+
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-tag {
+  color: #e63946;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero-overlay p {
+  max-width: 750px;
+  color: #d1d1d1;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* ==========================
+   INTRO
+========================== */
+
+.intro-entrevistas {
+  max-width: 900px;
+  margin: auto;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.intro-entrevistas h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+}
+
+.intro-entrevistas p {
+  color: #bcbcbc;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* ==========================
+   STATS
+========================== */
+
+.stats-entrevistas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  gap: 25px;
+  padding: 70px 8%;
+  background: #171717;
+}
+
+.stat-card {
+  background: #202020;
+  border-radius: 14px;
+  padding: 35px 25px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+}
+
+.stat-card h3 {
+  color: #e63946;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.stat-card span {
+  color: #c5c5c5;
+}
+
+/* ==========================
+   TITULO
+========================== */
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title span {
+  color: #e63946;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.section-title h2 {
+  margin: 15px 0;
+  font-size: 3rem;
+}
+
+.section-title p {
+  color: #bdbdbd;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* ==========================
+   GRID
+========================== */
+
+.entrevistas-listado {
+  padding: 90px 8%;
+}
+
+.entrevistas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+}
+
+/* ==========================
+   CTA
+========================== */
+
+.cta-entrevistas {
+  background: #151515;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.cta-entrevistas h2 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+}
+
+.cta-entrevistas p {
+  max-width: 700px;
+  margin: auto;
+  color: #bdbdbd;
+  line-height: 1.8;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 992px) {
+  .hero-overlay h1 {
+    font-size: 3rem;
+  }
+
+  .section-title h2,
+  .intro-entrevistas h2,
+  .cta-entrevistas h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-entrevistas {
+    height: 60vh;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .intro-entrevistas {
+    padding: 70px 20px;
+  }
+
+  .stats-entrevistas {
+    padding: 50px 20px;
+  }
+
+  .entrevistas-listado {
+    padding: 70px 20px;
+  }
+
+  .cta-entrevistas {
+    padding: 80px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .section-title h2,
+  .intro-entrevistas h2,
+  .cta-entrevistas h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-tag {
+    font-size: 0.8rem;
+  }
+}

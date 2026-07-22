@@ -1,0 +1,194 @@
+/* ===========================
+   Especial Detalle
+=========================== */
+
+.especial-detalle {
+  background: #09090b;
+  color: #fff;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
+
+/* Hero */
+
+.especial-hero {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.especial-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    #09090b 5%,
+    rgba(9, 9, 11, .4) 40%,
+    rgba(9, 9, 11, 0) 100%
+  );
+}
+
+.especial-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contenedor */
+
+.especial-container {
+  max-width: 850px;
+  margin: -100px auto 0;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Volver */
+
+.volver {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  color: #ef4444;
+  margin-bottom: 2rem;
+  transition: .3s;
+}
+
+.volver:hover {
+  gap: 1rem;
+}
+
+/* Categoría */
+
+.especial-categoria {
+  display: inline-block;
+  background: #dc2626;
+  padding: .5rem 1rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Título */
+
+.especial-title {
+  font-family: var(--font-title);
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+/* Meta */
+
+.especial-meta {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  color: #a1a1aa;
+  margin-bottom: 3rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+/* Contenido */
+
+.especial-content {
+  margin-top: 2rem;
+}
+
+.especial-content p {
+  font-family: var(--font-body);
+  color: #d4d4d8;
+  font-size: 1.15rem;
+  line-height: 2;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.especial-content p::first-letter {
+  font-size: 3rem;
+  font-family: var(--font-title);
+  color: #dc2626;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 1024px) {
+
+  .especial-hero {
+    height: 60vh;
+  }
+
+  .especial-title {
+    font-size: 3.2rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .especial-hero {
+    height: 45vh;
+  }
+
+  .especial-container {
+    margin-top: -70px;
+  }
+
+  .especial-title {
+    font-size: 2.5rem;
+  }
+
+  .especial-meta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .especial-content p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    text-align: left;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .especial-hero {
+    height: 35vh;
+  }
+
+  .especial-container {
+    margin-top: -50px;
+    padding: 0 1rem;
+  }
+
+  .especial-title {
+    font-size: 2rem;
+  }
+
+  .especial-categoria {
+    font-size: .75rem;
+  }
+
+  .especial-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .especial-content p::first-letter {
+    font-size: 2.2rem;
+  }
+
+}

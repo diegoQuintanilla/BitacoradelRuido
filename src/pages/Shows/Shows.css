@@ -1,0 +1,265 @@
+/* ======================================
+   PAGE
+====================================== */
+
+.shows-page{
+
+    background:#0b0b0b;
+
+    color:white;
+}
+
+/* ======================================
+   HERO
+====================================== */
+
+.shows-hero{
+
+    height:70vh;
+
+    background-image:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
+    url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.shows-overlay{
+
+    max-width:850px;
+
+    text-align:center;
+
+    padding:20px;
+}
+
+.shows-tag{
+
+    display:inline-block;
+
+    color:#e63946;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+}
+
+.shows-overlay h1{
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+}
+
+.shows-overlay p{
+
+    color:#c7c7c7;
+
+    line-height:1.8;
+
+    font-size:1.1rem;
+}
+
+/* ======================================
+   INTRO
+====================================== */
+
+.shows-intro{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:90px 20px;
+
+    text-align:center;
+}
+
+.shows-intro h2{
+
+    font-size:2.7rem;
+
+    margin-bottom:25px;
+}
+
+.shows-intro p{
+
+    color:#bdbdbd;
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+}
+
+/* ======================================
+   STATS
+====================================== */
+
+.shows-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+    padding:70px 8%;
+
+    background:#151515;
+}
+
+.stat-card{
+
+    background:#1f1f1f;
+
+    border-radius:16px;
+
+    padding:40px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    border:1px solid #e63946;
+}
+
+.stat-card svg{
+
+    color:#e63946;
+
+    margin-bottom:15px;
+}
+
+.stat-card h3{
+
+    font-size:2.3rem;
+
+    margin-bottom:10px;
+}
+
+.stat-card span{
+
+    color:#bdbdbd;
+}
+
+/* ======================================
+   CTA
+====================================== */
+
+.shows-cta{
+
+    padding:120px 20px;
+
+    text-align:center;
+
+    background:#121212;
+}
+
+.shows-cta h2{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+}
+
+.shows-cta p{
+
+    color:#bdbdbd;
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+}
+
+.shows-cta button{
+
+    padding:16px 34px;
+
+    background:#e63946;
+
+    color:white;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.shows-cta button:hover{
+
+    background:#ff4b5c;
+
+    transform:translateY(-5px);
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media(max-width:992px){
+
+.shows-overlay h1{
+
+    font-size:3rem;
+}
+
+}
+
+@media(max-width:768px){
+
+.shows-hero{
+
+    height:60vh;
+}
+
+.shows-overlay h1{
+
+    font-size:2.5rem;
+}
+
+.shows-intro{
+
+    padding:70px 20px;
+}
+
+.shows-intro h2{
+
+    font-size:2rem;
+}
+
+.shows-cta{
+
+    padding:90px 20px;
+}
+
+.shows-cta h2{
+
+    font-size:2.2rem;
+}
+
+}
