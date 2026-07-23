@@ -1,5 +1,5 @@
 import "./Hero.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { ArrowRight, Play, ArrowBigDownDash } from "lucide-react";
 
 import logo from "../../../assets/logo.png";
@@ -20,12 +20,6 @@ export default function Hero() {
 
       <div className="hero-container">
         <div className="hero-content">
-          <div className="hero-badge">
-            <span className="hero-badge-dot"></span>
-
-            <span className="hero-badge-text">Cobertura en vivo</span>
-          </div>
-
           <img src={logo} alt="La Bitácora del Ruido" className="hero-logo" />
 
           <p className="hero-subtitle">Coberturas · Historias</p>
@@ -46,10 +40,10 @@ export default function Hero() {
               <ArrowRight size={20} />
             </Link>
 
-            <button className="btn-secondary">
+            <Link to={"/Shows"} className="btn-secondary">
               <Play size={18} />
-              Último show
-            </button>
+              Ver Shows
+            </Link>
           </div>
         </div>
       </div>

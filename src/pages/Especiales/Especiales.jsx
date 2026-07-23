@@ -31,29 +31,6 @@ export default function Especiales() {
         </p>
       </section>
 
-      {/* Estadísticas */}
-      <section className="stats-entrevistas">
-        <div className="stat-card">
-          <h3>50+</h3>
-          <span>Especiales</span>
-        </div>
-
-        <div className="stat-card">
-          <h3>30</h3>
-          <span>Bandas</span>
-        </div>
-
-        <div className="stat-card">
-          <h3>100+</h3>
-          <span>Horas de grabación</span>
-        </div>
-
-        <div className="stat-card">
-          <h3>Exclusivas</h3>
-          <span>Backstage & Camerinos</span>
-        </div>
-      </section>
-
       {/* Listado */}
       <section className="entrevistas-listado">
         <div className="section-title">

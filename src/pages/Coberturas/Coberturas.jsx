@@ -36,31 +36,6 @@ export default function Coberturas() {
         </p>
       </section>
 
-      {/* Estadísticas */}
-      <section className="stats-coberturas">
-
-        <div className="stat-card">
-          <h3>120+</h3>
-          <span>Coberturas</span>
-        </div>
-
-        <div className="stat-card">
-          <h3>45</h3>
-          <span>Festivales</span>
-        </div>
-
-        <div className="stat-card">
-          <h3>3000+</h3>
-          <span>Fotografías</span>
-        </div>
-
-        <div className="stat-card">
-          <h3>10</h3>
-          <span>Años recorriendo escenarios</span>
-        </div>
-
-      </section>
-
       {/* Grid */}
       <section className="coberturas-section">
 

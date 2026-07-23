@@ -23,9 +23,6 @@ export default function Noticias() {
             <NoticiasCard
               key={noticia.id}
               {...noticia}
-              onClick={() =>
-                console.log(`Abrir noticia ${noticia.id}`)
-              }
             />
 
           ))}

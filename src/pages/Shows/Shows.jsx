@@ -1,5 +1,4 @@
 import "./Shows.css";
-import { CalendarDays, Music2, Ticket, MapPin } from "lucide-react";
 import ShowsCard from "../../componentes/cards/ShowsCard/ShowsCard";
 import shows from "../../data/shows";
 
@@ -32,34 +31,6 @@ export default function Shows() {
         </p>
       </section>
 
-      {/* STATS */}
-
-      <section className="shows-stats">
-        <div className="stat-card">
-          <Music2 size={34} />
-          <h3>100+</h3>
-          <span>Bandas</span>
-        </div>
-
-        <div className="stat-card">
-          <CalendarDays size={34} />
-          <h3>250+</h3>
-          <span>Fechas</span>
-        </div>
-
-        <div className="stat-card">
-          <MapPin size={34} />
-          <h3>20</h3>
-          <span>Ciudades</span>
-        </div>
-
-        <div className="stat-card">
-          <Ticket size={34} />
-          <h3>Siempre</h3>
-          <span>Actualizado</span>
-        </div>
-      </section>
-
       {/* LISTADO */}
       <section className="shows-section">
         <div className="shows-grid">
@@ -69,15 +40,6 @@ export default function Shows() {
         </div>
       </section>
 
-      {/* CTA */}
-
-      <section className="shows-cta">
-        <h2>¿Organizás un recital?</h2>
-
-        <p>Contactanos y difundí tu evento en La Bitácora del Ruido.</p>
-
-        <button>Contactanos</button>
-      </section>
     </main>
   );
 }

@@ -23,9 +23,6 @@ export default function EspecialesSection() {
               cargo={item.cargo}
               imagen={item.imagen}
               slug={item.slug}
-              onClick={() =>
-                console.log(item.artista)
-              }
             />
           ))}
         </div>
