@@ -1,8 +1,27 @@
 import "./Noticias.css";
+import { useEffect, useState } from "react";
+
 import NoticiasCard from "../../componentes/cards/NoticiasCard/NoticiaCard";
-import noticias from "../../data/noticias";
+
+import { getNoticias } from "../../services/noticias";
+import { urlFor } from "../../sanity/image";
 
 export default function NoticiasPage() {
+  const [noticias, setNoticias] = useState([]);
+
+  useEffect(() => {
+    async function cargarNoticias() {
+      try {
+        const data = await getNoticias();
+        setNoticias(data);
+      } catch (error) {
+        console.error("Error al cargar noticias:", error);
+      }
+    }
+
+    cargarNoticias();
+  }, []);
+
   return (
     <main className="noticias-page">
       {/* Hero */}
@@ -25,7 +44,6 @@ export default function NoticiasPage() {
       </header>
 
       {/* Contenido */}
-
       <section className="noticias-page__contenido-principal">
         <div className="noticias-page__encabezado">
           <h2>Últimas publicaciones</h2>
@@ -35,10 +53,17 @@ export default function NoticiasPage() {
 
         <div className="noticias-grid">
           {noticias.map((item) => (
-            <NoticiasCard key={item.id} {...item} />
+            <NoticiasCard
+              key={item._id}
+              titulo={item.titulo}
+              descripcion={item.descripcion}
+              fecha={item.fecha}
+              categoria={item.categoria}
+              slug={item.slug?.current}
+              imagen={urlFor(item.imagen).width(700).url()}
+            />
           ))}
         </div>
-        
       </section>
     </main>
   );

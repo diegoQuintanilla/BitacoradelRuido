@@ -1,20 +1,45 @@
 import "./NoticiaDetalle.css";
-import { Link, useParams } from "react-router-dom";
-import {
-  CalendarDays,
-  Clock3,
-  ArrowLeft,
-  User,
-} from "lucide-react";
 
-import noticias from "../../data/noticias";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { PortableText } from "@portabletext/react";
+import { portableTextComponents } from "../../componentes/PortableTextComponents";
+
+import { CalendarDays, Clock3, ArrowLeft, User } from "lucide-react";
+
+import { getNoticia } from "../../services/noticias";
+import { urlFor } from "../../sanity/image";
 
 export default function NoticiaDetalle() {
   const { slug } = useParams();
 
-  const noticia = noticias.find(
-    (item) => item.slug === slug
-  );
+  const [noticia, setNoticia] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function cargarNoticia() {
+      try {
+        const data = await getNoticia(slug);
+        setNoticia(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    cargarNoticia();
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <main className="noticia-detalle">
+        <div className="noticia-container">
+          <h2>Cargando noticia...</h2>
+        </div>
+      </main>
+    );
+  }
 
   if (!noticia) {
     return (
@@ -28,20 +53,12 @@ export default function NoticiaDetalle() {
 
   return (
     <main className="noticia-detalle">
-
       <div className="noticia-container">
+        <h1 className="noticia-title">{noticia.titulo}</h1>
 
-
-        <h1 className="noticia-title">
-          {noticia.titulo}
-        </h1>
-
-        <p className="noticia-bajada">
-          {noticia.descripcion}
-        </p>
+        <p className="noticia-bajada">{noticia.descripcion}</p>
 
         <div className="noticia-meta">
-
           <div className="meta-item">
             <User size={18} />
             <span>La Bitácora del Ruido</span>
@@ -49,14 +66,13 @@ export default function NoticiaDetalle() {
 
           <div className="meta-item">
             <CalendarDays size={18} />
-            <span>{noticia.fecha}</span>
+            <span>{new Date(noticia.fecha).toLocaleDateString("es-AR")}</span>
           </div>
 
           <div className="meta-item">
             <Clock3 size={18} />
             <span>4 min de lectura</span>
           </div>
-
         </div>
 
         <Link to="/noticias" className="volver-noticias">
@@ -66,30 +82,20 @@ export default function NoticiaDetalle() {
       </div>
 
       <section className="noticia-hero">
-
         <img
-          src={noticia.imagen}
+          src={urlFor(noticia.imagen).width(1400).url()}
           alt={noticia.titulo}
         />
-
       </section>
 
       <div className="noticia-container">
-
         <div className="noticia-content">
-
-          {noticia.contenido.map((parrafo, index) => (
-
-            <p key={index}>
-              {parrafo}
-            </p>
-
-          ))}
-
+          <PortableText
+            value={noticia.contenido}
+            components={portableTextComponents}
+          />
         </div>
-
       </div>
-
     </main>
   );
 }

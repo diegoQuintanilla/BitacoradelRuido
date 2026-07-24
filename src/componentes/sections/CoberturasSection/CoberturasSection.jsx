@@ -1,8 +1,26 @@
 import "./CoberturasSection.css";
-import coberturas from "../../../data/coberturas";
+import { useEffect, useState } from "react";
 import CoberturaCard from "../../cards/CoberturaCard/CoberturaCard";
 
+import { getCoberturas } from "../../../services/coberturas";
+import { urlFor } from "../../../sanity/image";
+
 export default function Coberturas() {
+  const [coberturas, setCoberturas] = useState([]);
+
+  useEffect(() => {
+    async function cargarCoberturas() {
+      try {
+        const data = await getCoberturas();
+        setCoberturas(data);
+      } catch (error) {
+        console.error("Error al cargar coberturas:", error);
+      }
+    }
+
+    cargarCoberturas();
+  }, []);
+
   return (
     <section className="coberturas">
       <div className="coberturas-container">
@@ -18,13 +36,14 @@ export default function Coberturas() {
         <div className="coberturas-grid">
           {coberturas.slice(0, 3).map((item) => (
             <CoberturaCard
-             key={item.id}
-             imagen={item.imagen}
-             titulo={item.titulo}
-             categoria={item.categoria}
-             fecha={item.fecha}
-             lugar={item.lugar}
-             slug={item.slug} />
+              key={item._id}
+              imagen={item.imagen ? urlFor(item.imagen).width(600).url() : ""}
+              titulo={item.titulo}
+              categoria={item.categoria}
+              fecha={item.fecha}
+              lugar={item.lugar}
+              slug={item.slug.current}
+            />
           ))}
         </div>
       </div>
