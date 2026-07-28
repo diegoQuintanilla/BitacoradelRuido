@@ -24,7 +24,7 @@
 
 .entrevistas-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
   margin-top: 4rem;
 }
@@ -99,7 +99,7 @@
 
 @media (max-width: 992px) {
   .entrevistas-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2,1fr);
   }
 
   .entrevistas-titulo {
@@ -136,5 +136,9 @@
   .entrevista-btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .entrevistas-grid{
+    grid-template-columns: repeat(1,1fr);
   }
 }

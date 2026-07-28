@@ -142,11 +142,11 @@
   padding: 90px 8%;
 }
 
-.entrevistas-grid {
+/* .entrevistas-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 35px;
-}
+} */
 
 /* ==========================
    CTA

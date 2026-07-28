@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function EspecialesCard({
   artista,
-  cargo,
+  categoria,
   imagen,
   onClick,
   slug,
@@ -23,7 +23,7 @@ export default function EspecialesCard({
 
       <div className="entrevista-info">
         <span className="entrevista-cargo">
-          {cargo}
+          {categoria}
         </span>
 
         <h3 className="entrevista-artista">

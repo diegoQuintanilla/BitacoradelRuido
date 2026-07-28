@@ -1,8 +1,25 @@
 import "./ShowsSection.css";
 import ShowsCard from "../../cards/ShowsCard/ShowsCard";
-import shows from "../../../data/shows";
+import { useEffect, useState } from "react";
+import { getShows } from "../../../services/shows";
+import { urlFor } from "../../../sanity/image";
 
 export default function ShowsSection() {
+  const [shows, setShows] = useState([]);
+
+  useEffect(() => {
+    async function cargarShows() {
+      try {
+        const data = await getShows();
+        setShows(data);
+      } catch (error) {
+        console.error("Error al cargar shows:", error);
+      }
+    }
+
+    cargarShows();
+  }, []);
+
   return (
     <section className="shows-section">
       <div className="shows-container">
@@ -20,10 +37,20 @@ export default function ShowsSection() {
         </p>
 
         <div className="shows-grid">
-          {shows.slice(0,3).map((show) => (
+          {shows.slice(0, 3).map((show) => (
             <ShowsCard
-              key={show.id}
-              {...show}
+              key={show._id}
+              artista={show.artista}
+              titulo={show.titulo}
+              categoria={show.categoria}
+              fecha={show.fecha}
+              hora={show.hora}
+              lugar={show.lugar}
+              ciudad={show.ciudad}
+              precio={show.precio}
+              estado={show.estado}
+              slug={show.slug.current}
+              imagen={urlFor(show.imagen).width(800).url()}
             />
           ))}
         </div>

@@ -1,8 +1,25 @@
 import "./Shows.css";
 import ShowsCard from "../../componentes/cards/ShowsCard/ShowsCard";
-import shows from "../../data/shows";
+import { useEffect, useState } from "react";
+import { getShows } from "../../services/shows";
+import { urlFor } from "../../sanity/image";
 
 export default function Shows() {
+  const [shows, setShows] = useState([]);
+
+  useEffect(() => {
+    async function cargarShows() {
+      try {
+        const data = await getShows();
+        setShows(data);
+      } catch (error) {
+        console.error("Error al cargar shows:", error);
+      }
+    }
+
+    cargarShows();
+  }, []);
+
   return (
     <main className="shows-page">
       {/* HERO */}
@@ -32,14 +49,27 @@ export default function Shows() {
       </section>
 
       {/* LISTADO */}
+
       <section className="shows-section">
         <div className="shows-grid">
           {shows.map((item) => (
-            <ShowsCard key={item.id} {...item} />
+            <ShowsCard
+              key={item._id}
+              artista={item.artista}
+              titulo={item.titulo}
+              categoria={item.categoria}
+              fecha={item.fecha}
+              hora={item.hora}
+              lugar={item.lugar}
+              ciudad={item.ciudad}
+              precio={item.precio}
+              estado={item.estado}
+              imagen={urlFor(item.imagen).width(800).url()}
+              slug={item.slug.current}
+            />
           ))}
         </div>
       </section>
-
     </main>
   );
 }

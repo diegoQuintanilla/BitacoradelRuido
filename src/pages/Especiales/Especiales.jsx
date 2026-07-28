@@ -1,10 +1,31 @@
 import "./Especiales.css";
+import { useEffect, useState } from "react";
 import EspecialesCard from "../../componentes/cards/EspecialesCard/EspecialesCard";
-import especiales from "../../data/especiales";
+import { getEspeciales } from "../../services/especiales";
+import { urlFor } from "../../sanity/image";
 
 export default function Especiales() {
+  const [especiales, setEspeciales] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function cargarEspeciales() {
+      try {
+        const data = await getEspeciales();
+        setEspeciales(data);
+      } catch (error) {
+        console.error("Error al cargar especiales:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    cargarEspeciales();
+  }, []);
+
   return (
     <main className="page-entrevistas">
+
       {/* Hero */}
       <section className="hero-entrevistas">
         <div className="hero-overlay">
@@ -44,17 +65,21 @@ export default function Especiales() {
           </p>
         </div>
 
-        <div className="entrevistas-grid">
-          {especiales.map((item) => (
-            <EspecialesCard
-              key={item.id}
-              artista={item.artista}
-              cargo={item.cargo}
-              imagen={item.imagen}
-              slug={item.slug}
-            />
-          ))}
-        </div>
+        {loading ? (
+          <p className="loading-text">Cargando especiales...</p>
+        ) : (
+          <div className="entrevistas-grid">
+            {especiales.map((item) => (
+              <EspecialesCard
+                key={item._id}
+                artista={item.artista}
+                categoria={item.categoria}
+                imagen={urlFor(item.imagen).width(700).url()}
+                slug={item.slug.current}
+              />
+            ))}
+          </div>
+        )}
       </section>
 
       {/* CTA */}
@@ -66,6 +91,7 @@ export default function Especiales() {
           adelantos y contenido especial de tus bandas favoritas.
         </p>
       </section>
+
     </main>
   );
 }
