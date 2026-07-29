@@ -62,7 +62,7 @@ export default function Footer() {
               <div className="contact-item">
                 <Mail size={20} />
 
-                <span>contacto@labitacoradelruido.com</span>
+                <span>Labitacoradelruido@gmail.com</span>
               </div>
 
               <div className="contact-item">

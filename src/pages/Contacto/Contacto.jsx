@@ -41,12 +41,12 @@ export default function Contacto() {
 
           <div className="info-item">
             <Mail />
-            <span>contacto@labitacoradelruido.com</span>
+            <span>Labitacoradelruido@gmail.com</span>
           </div>
 
           <div className="redes">
 
-            <a href="#">
+            <a href="https://www.instagram.com/labitacoradelruido?igsh=MXQ2cGtoeWZ5ZGlzbA==">
               <FaInstagram />
             </a>
 

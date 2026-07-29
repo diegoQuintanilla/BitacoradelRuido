@@ -16,6 +16,7 @@ import EspecialDetalle from "./detalles/especialDetalle/EspecialDetalle";
 import ShowDetalle from "./detalles/showDetalle/ShowDetalle";
 
 import ScrollToTop from "./componentes/ScrollToTop";
+import WhatsAppButton from "./componentes/WhatsAppButton/WhatsAppButton";
 
 function App() {
   return (
@@ -47,6 +48,8 @@ function App() {
       </Routes>
 
       <Footer />
+
+      <WhatsAppButton/>
     </>
   );
 }

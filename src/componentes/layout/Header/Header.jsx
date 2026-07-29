@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./Header.css";
 import { NavLink, Link } from "react-router-dom";
-import { Camera, Images, Newspaper, Mic2, Menu, X } from "lucide-react";
+import { Camera, Ticket, Newspaper, Mic2, Menu, X } from "lucide-react";
 import guitarra from "../../../assets/guitarra.png";
 
 const links = [
   { title: "Coberturas", icon: Camera },
-  { title: "Shows", icon: Images },
+  { title: "Shows", icon: Ticket },
   { title: "Noticias", icon: Newspaper },
   { title: "Especiales", icon: Mic2 },
 ];
