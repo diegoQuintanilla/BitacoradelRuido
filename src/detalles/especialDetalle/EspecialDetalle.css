@@ -13,27 +13,16 @@
 
 .especial-hero {
   width: 100%;
-  height: 70vh;
-  overflow: hidden;
-  position: relative;
+  margin-top: 5rem;
+  overflow: visible;
+  height: auto;
 }
-
-.especial-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    #09090b 5%,
-    rgba(9, 9, 11, .4) 40%,
-    rgba(9, 9, 11, 0) 100%
-  );
-}
-
-.especial-hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  
+  .especial-hero img {
+  display: block;
+  width: 50%;
+  margin: auto;
+  height: auto;
 }
 
 /* Contenedor */
@@ -127,7 +116,7 @@
 @media (max-width: 1024px) {
 
   .especial-hero {
-    height: 60vh;
+    height: 85vh;
   }
 
   .especial-title {
@@ -139,7 +128,7 @@
 @media (max-width: 768px) {
 
   .especial-hero {
-    height: 45vh;
+    height: 60vh;
   }
 
   .especial-container {

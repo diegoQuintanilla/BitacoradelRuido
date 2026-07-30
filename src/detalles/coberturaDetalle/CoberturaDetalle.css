@@ -12,38 +12,27 @@
 /* Hero */
 
 .cobertura-hero {
-  position: relative;
   width: 100%;
-  height: 75vh;
-  overflow: hidden;
+  margin-top: 5rem;
+  overflow: visible;
+  height: auto;
 }
-
-.cobertura-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    #09090b 5%,
-    rgba(9, 9, 11, 0.35) 45%,
-    rgba(9, 9, 11, 0.1) 100%
-  );
+  
+  .cobertura-hero img {
+  display: block;
+  width: 50%;
+  margin: auto;
+  height: auto;
 }
-
-.cobertura-hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Contenedor */
-
-.cobertura-container {
-  max-width: 900px;
-  margin: -120px auto 0;
-  padding: 0 1.5rem;
-  position: relative;
-  z-index: 2;
+  
+  /* Contenedor */
+  
+  .cobertura-container {
+    max-width: 900px;
+    margin: -120px auto 0;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
 }
 
 /* Categoría */
@@ -105,13 +94,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
 }
 
 .cobertura-gallery img {
   width: 100%;
   height: 260px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 16px;
   transition: .35s;
 }
@@ -128,7 +117,7 @@
   gap: .6rem;
   color: #ef4444;
   text-decoration: none;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
   transition: .3s;
 }
 
@@ -141,9 +130,9 @@
 =========================== */
 
 @media (max-width: 1024px) {
-
+  
   .cobertura-hero {
-    height: 60vh;
+    height: 90vh;
   }
 
   .cobertura-title {
@@ -153,9 +142,15 @@
 }
 
 @media (max-width: 768px) {
-
+  .cobertura-hero img {
+  display: block;
+  width: 70%;
+  margin: auto;
+  height: auto;
+  }
+  
   .cobertura-hero {
-    height: 45vh;
+    height: 100vh;
   }
 
   .cobertura-container {
@@ -184,6 +179,7 @@
   .cobertura-hero {
     height: 35vh;
   }
+
 
   .cobertura-container {
     padding: 0 1rem;

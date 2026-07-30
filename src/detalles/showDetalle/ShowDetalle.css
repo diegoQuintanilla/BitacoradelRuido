@@ -11,29 +11,18 @@
 
 /* Hero */
 
-.show-hero{
-    width:100%;
-    height:65vh;
-    overflow:hidden;
-    position:relative;
+.show-hero {
+  width: 100%;
+  margin-top: 5rem;
+  overflow: visible;
+  height: auto;
 }
-
-.show-hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to top,
-        #09090b,
-        rgba(9,9,11,.35),
-        transparent
-    );
-}
-
-.show-hero img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+  
+  .show-hero img {
+  display: block;
+  width: 50%;
+  margin: auto;
+  height: auto;
 }
 
 /* Container */
@@ -161,7 +150,7 @@
     }
 
     .show-hero{
-        height:55vh;
+        height:85vh;
     }
 
 }
@@ -169,7 +158,7 @@
 @media(max-width:768px){
 
     .show-hero{
-        height:40vh;
+        height:60vh;
     }
 
     .show-container{

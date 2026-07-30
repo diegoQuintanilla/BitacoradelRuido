@@ -75,10 +75,6 @@ export default function NoticiaDetalle() {
           </div>
         </div>
 
-        <Link to="/noticias" className="volver-noticias">
-          <ArrowLeft size={18} />
-          Volver a Noticias
-        </Link>
       </div>
 
       <section className="noticia-hero">
@@ -95,7 +91,13 @@ export default function NoticiaDetalle() {
             components={portableTextComponents}
           />
         </div>
+        <Link to="/noticias" className="volver-noticias">
+          <ArrowLeft size={18} />
+          Volver a Noticias
+        </Link>
       </div>
+
+
     </main>
   );
 }

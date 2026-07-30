@@ -79,17 +79,18 @@
 
 /* Hero */
 
-.noticia-hero{
-    max-width:1200px;
-    margin:0 auto 4rem;
-    padding:0 1.5rem;
+.noticia-hero {
+  width: 100%;
+  margin-top: 5rem;
+  overflow: visible;
+  height: auto;
 }
-
-.noticia-hero img{
-    width:100%;
-    border-radius:20px;
-    object-fit:cover;
-    max-height:600px;
+  
+  .noticia-hero img {
+  display: block;
+  width: 50%;
+  margin: auto;
+  height: auto;
 }
 
 /* Contenido */
