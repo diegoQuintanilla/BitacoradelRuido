@@ -1,6 +1,6 @@
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import { FaInstagram, FaFacebook, FaYoutube, FaSpotify } from "react-icons/fa";
+// import { FaInstagram, FaFacebook, FaYoutube, FaSpotify } from "react-icons/fa";
 
 import { Mail, MapPin, ArrowUp } from "lucide-react";
 
@@ -13,7 +13,7 @@ const links = [
   "Especiales",
 ];
 
-const social = [FaInstagram, FaFacebook, FaYoutube, FaSpotify];
+// const social = [FaInstagram, FaFacebook, FaYoutube, FaSpotify];
 
 export default function Footer() {
   return (
@@ -30,13 +30,13 @@ export default function Footer() {
               rock nacional e internacional.
             </p>
 
-            <div className="footer-social">
+            {/* <div className="footer-social">
               {social.map((Icon, index) => (
                 <a key={index} href="#" className="social-link">
                   <Icon size={20} />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Navegación */}

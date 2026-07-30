@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     await resend.emails.send({
       from: "La Bitácora del Ruido <onboarding@resend.dev>",
 
-      to: "dieguitoquinta@gmail.com",
+      to: "labitacoradelruido@gmail.com",
 
       subject: `Nuevo mensaje de ${nombre}`,
 
